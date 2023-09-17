@@ -2,10 +2,10 @@
 //Создайте функцию makeOne которая записывает в Local Storage ключ games со значением 11. Вызывается функция по кнопке Задание 1.
 
 function makeOne() {
-	//Ваш код
+	window.localStorage.setItem('games', '11')
 }
 
-//добавьте слушатель события
+document.querySelector('.b-1').addEventListener('click', makeOne);
 
 //Задание 2
 //Создайте функцию makeTwo, которая сохраняет в Local Storage строку "7,6,5". Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 2.

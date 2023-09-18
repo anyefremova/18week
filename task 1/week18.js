@@ -136,18 +136,25 @@ document.querySelector('.b-10').addEventListener('click', makeTen);
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
 function makeEleven() {
-	//Ваш код
+	const arr11 = [
+		{ name: "Алиса", age: 30 },
+		{ name: "Филин", age: 35 },
+		{ name: "Кот", age: 40 }
+	];
+	const arr11JSON = JSON.stringify(arr11);
+	window.localStorage.setItem('arrayEleven', arr11JSON);
 	console.log('Массив arr был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-11').addEventListener('click', makeEleven);
 
 //Задание 12
 //Создайте функцию showEleven, которая при нажатии кнопки Задание 12 получит из Local Storage сохраннённый массив arrayEleven. Выведите в practicum12 в формате ключ пробел значение. Вызывается функция по кнопке Задание 12.
 //Подсказка: Для преобразования строки в объект используйте метод JSON.parse()
 
 function showEleven() {
-	//Ваш код
+	const arr11String = localStorage.getItem('arrayEleven');
+	const arrayEleven = JSON.parse(arr11String);
 	let output = '';
 	for (let i = 0; i < arrayEleven.length; i++) {
 		const object = arrayEleven[i];
@@ -158,7 +165,7 @@ function showEleven() {
 	document.querySelector('.practicum12').textContent = output;
 }
 
-//добавьте слушатель события
+document.querySelector('.b-12').addEventListener('click', showEleven);
 
 //Задание 13
 //Создайте функцию showTen, которая при нажатии кнопки Задание 12 получит из Local Storage сохраннённый массив arrayTen. Выведите в элемент с классом practicum13 в формате ключ пробел значение перенос строки. Вызывается функция по кнопке Задание 13.

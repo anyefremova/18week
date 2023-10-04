@@ -8,5 +8,9 @@ const list = document.getElementsByClassName('list');
 const listTask = document.getElementsByClassName('list__task');
 
 function makeTask() {
-
+    const newTask = document.createElement('li');
+    newTask.textContent = taskText;
+    listTask.append(newTask);
+    taskText = "";
 }
+document.querySelector('.btn__add').addEventListener('click', makeTask);

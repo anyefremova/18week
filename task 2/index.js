@@ -4,13 +4,12 @@ const taskText = input.value;
 const addButton = document.getElementsByClassName('btn__add');
 const clearButton = document.getElementsByClassName('btn__clear');
 
-const list = document.getElementsByClassName('list');
 const listTask = document.getElementsByClassName('list__task');
 
 function makeTask() {
-    const newTask = document.createElement('li');
-    newTask.textContent = taskText;
-    listTask.append(newTask);
-    taskText = "";
+    let newTask = document.createElement('li');
+    newTask.textContent = input.value;
+    listTask.append(newTask)
+    input.value = "";
 }
 document.querySelector('.btn__add').addEventListener('click', makeTask);
